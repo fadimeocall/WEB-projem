@@ -1,0 +1,692 @@
+body {
+    background-color: #ada476;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+}
+
+ul {
+    list-style: none;
+    /*numaranlanma stilini kaldırır*/
+    background-color: #c6c79b;
+    text-align: center;
+    /*başlık ortalamak için kullanılır*/
+
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+
+
+}
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: white;
+    text-decoration: none;
+    margin-left: 70px;
+    /* a daki alt çizgiyi kaldırır*/
+    text-align: center;
+    /* metni kapsayıcı öğesi içinde yatay olarak ortalar*/
+}
+
+ul li ul.dropdown li {
+
+    display: block;
+
+}
+
+
+ul li ul.dropdown {
+    width: 90%;
+    background:#dce5bb;
+    position: absolute;
+    display: none;
+    z-index: 999;
+
+}
+
+ul li a:hover {
+    background: hsl(357, 53%, 17%);
+
+
+}
+
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+
+ul li ul.dropdown li a:hover {
+    color: black;
+    background-color: hsla(356, 53%, 17%, 0.721);
+    padding: 15px 20px;
+}
+
+
+nav>ul>li>a {
+    opacity: 1;
+    transition: all 0.4s;
+    transform: scale(1);
+}
+
+nav>ul>li>a:hover {
+    opacity: 0.7;
+    transform: scale(1.3);
+
+}
+
+ul.dropdown>li>a {
+    opacity: 1;
+    transition: all 0.3s;
+    transform: scale(1);
+}
+
+ul.dropdown>li>a:hover {
+    opacity: 0.7;
+    transform: scale(1.5);
+
+}
+
+.ıtalia>h1 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.ücdgörsel {
+
+    display: flex;
+    justify-content: center;
+    /* Yatayda ortalar */
+    width: 100%;
+}
+
+.ücdgörsel iframe {
+    margin-top: 80px;
+    width: 130%;
+    /* İframe'i tam genişlikte yapar */
+    max-width: 1400px;
+    /* Maksimum genişliği belirler (isteğe bağlı) */
+    height: 400px;
+    /* Sabit yükseklik */
+    border: none;
+}
+
+@keyframes typing {
+
+    /*genellikle yazı yazma efekti olarak kulllanılır 0dan 14em degerine kadar artırır*/
+    from {
+        width: 0;
+        /*başllangıcta metin görünmez halde olsun.*/
+    }
+
+    to {
+        width: 14em;
+        /*öğenin genişliği olacak şekilde genişler.metnin belirli süre sonra sağdan sola dogru görünür hale gelemsını sağlar */
+    }
+}
+
+@keyframes blink {
+
+    /*yanıp sönen imleç*/
+    50% {
+        border-color: transparent;
+        /*imleçi görünürden görünmeze değiştirir*/
+    }
+
+}
+
+.foto {
+    height: 150vh;
+    display: flex;
+    align-items: flex-start;
+    /*yukarda hizala*/
+    justify-content: center;
+}
+
+.fotogaleri {
+
+    color: whitesmoke;
+    white-space: nowrap;
+    /*metnin tek satırda kalmasını sağlar*/
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 2em;
+    width: max-content;
+    /* Metin genişliğine uygun ayarlama */
+    animation: typing 7s steps(30, end), blink .5s step-end infinite alternate;
+    margin-top: 80px;
+}
+
+.cardcontainer{
+    position: relative;
+    margin-top: -700px;
+    margin-left: 70px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.card:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfront{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardback{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfront>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+.cardcontainerbir{
+    position: relative;
+    margin-top: -700px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardbir{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardbir:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontbir{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackbir{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontbir>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardcontaineriki{
+    position: relative;
+    margin-top: -700px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardiki{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardiki:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontiki{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackiki{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontiki>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardcontaineruc{
+    position: relative;
+    margin-top: -700px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.carduc{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.carduc:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontuc{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackuc{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontuc>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardcontainerdort{
+    position: relative;
+    margin-top: -700px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.carddort{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.carddort:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontdort{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackdort{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontdort>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+
+.cardcontainerbes{
+   
+    position: relative;
+    top:330px;
+    margin-left: -1000px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardbes{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardbes:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontbes{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackbes{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontbes>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardcontaineralt{
+    position: relative;
+    margin-top: -1px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardalt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardalt:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontalt{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackalt{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontalt>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+.cardcontaineryed{
+    position: relative;
+    margin-top: -1px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardyed{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardyed:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontyed{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackyed{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontyed>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+
+.cardcontainersek{
+    position: relative;
+    margin-top: -1px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.cardsek{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.cardsek:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontsek{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbacksek{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontsek>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardcontainerdok{
+    position: relative;
+    margin-top: -1px;
+    margin-left: 250px;
+    border-radius: 25px;
+    width: 220px;
+    height: 300px;
+   /* background-color: chocolate; en dış kartın rengini kaldırdım*/ 
+
+}
+.carddok{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: brown;
+    transform-style: preserve-3d; 
+    transition: all 0.3s ease-out; /*geçiş olabilmesi için tüm özelliklere animasyon ekleyebilirsin ve bu animasyonlar 0.3 olsun yavaşlayarak durur eger transition olmasaydı efektsiz dönecekti*/
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,3);/*gölge verebilmek için box-shadow komutu ekledik,yatay konum-dikey konum-gölge genişliği-gölge kalınlığı-renkler*/
+}
+.carddok:hover{
+    transform: rotateY(180deg);
+  
+}
+.cardfrontdok{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color: darkblue;
+}
+.cardbackdok{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    background-color:#c6c79b;
+    transform: rotateY(180deg); /*180 derece cevirmek için*/
+}
+.cardfrontdok>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+
+
+
